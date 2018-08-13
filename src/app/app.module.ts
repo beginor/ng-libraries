@@ -14,13 +14,15 @@ import { AboutComponent } from './components/about/about.component';
 import {
     AnimationsComponent
 } from './components/animations/animations.component';
+import { SceneComponent } from './components/scene/scene.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         AboutComponent,
-        AnimationsComponent
+        AnimationsComponent,
+        SceneComponent
     ],
     imports: [
         BrowserModule,

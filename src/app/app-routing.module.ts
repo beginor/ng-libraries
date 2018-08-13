@@ -6,12 +6,14 @@ import { AboutComponent } from './components/about/about.component';
 import {
     AnimationsComponent
 } from './components/animations/animations.component';
+import { SceneComponent } from './components/scene/scene.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'animations', component: AnimationsComponent }
+    { path: 'animations', component: AnimationsComponent },
+    { path: 'scene', component: SceneComponent }
 ];
 
 @NgModule({
