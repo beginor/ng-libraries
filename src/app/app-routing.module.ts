@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import {
+    AnimationsComponent
+} from './components/animations/animations.component';
 
-const routes = [
+const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'about', component: AboutComponent }
+    { path: 'about', component: AboutComponent },
+    { path: 'animations', component: AnimationsComponent }
 ];
 
 @NgModule({
