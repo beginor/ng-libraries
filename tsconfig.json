@@ -15,6 +15,20 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "esri-service": [
+        "dist/esri-service"
+      ],
+      "esri-service/*": [
+        "dist/esri-service/*"
+      ],
+      "ng-animations": [
+        "dist/ng-animations"
+      ],
+      "ng-animations/*": [
+        "dist/ng-animations/*"
+      ]
+    }
   }
 }
