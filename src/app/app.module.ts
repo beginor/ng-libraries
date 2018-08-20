@@ -32,7 +32,7 @@ import { SceneComponent } from './components/scene/scene.component';
         ReactiveFormsModule,
         HttpClientModule,
         HttpClientJsonpModule,
-        NgbModule.forRoot(),
+        NgbModule,
         AppRoutingModule
     ],
     bootstrap: [AppComponent]
