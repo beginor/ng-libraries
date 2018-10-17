@@ -41,8 +41,8 @@ export class SceneComponent implements OnInit, OnDestroy {
     public async ngOnInit(): Promise<void> {
         try {
             await loadScript({
-                url: 'https://js.arcgis.com/4.8/init.js',
-                css: 'https://js.arcgis.com/4.8/esri/css/main.css'
+                url: 'https://js.arcgis.com/4.9/init.js',
+                css: 'https://js.arcgis.com/4.9/esri/css/main.css'
             });
             const map = await esri.createMap({
                 basemap: 'satellite',
