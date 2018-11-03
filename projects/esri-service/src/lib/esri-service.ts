@@ -546,7 +546,13 @@ export async function createWebSceneFromConfig(
     return webscene;
 }
 
-async function createLayers(layersProps: any[]): Promise<__esri.Layer[]> {
+/**
+ * Create a layers from properties;
+ * @param layersProps array of layer's properties
+ */
+export async function createLayers(
+    layersProps: any[]
+): Promise<__esri.Layer[]> {
     const layers = [];
     for (const layerProps of layersProps) {
         const layer = await createLayer(layerProps);
@@ -554,8 +560,11 @@ async function createLayers(layersProps: any[]): Promise<__esri.Layer[]> {
     }
     return layers;
 }
-
-async function createLayer(props: any): Promise<__esri.Layer> {
+/**
+ * Create a layer from properties;
+ * @param props layer's properties
+ */
+export async function createLayer(props: any): Promise<__esri.Layer> {
     const layerType = props.type;
     delete props.type;
     let layer: __esri.Layer;
