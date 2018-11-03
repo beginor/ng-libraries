@@ -1,8 +1,8 @@
 {
   "name": "ng-animations",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.0",
-    "@angular/core": "^6.0.0"
+    "@angular/common": "^6.0.0 || ^7.0.0",
+    "@angular/core": "^6.0.0 || ^7.0.0"
   }
 }
