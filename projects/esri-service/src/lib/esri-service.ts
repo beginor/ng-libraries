@@ -60,6 +60,7 @@ export async function createBasemapFromId(
 export async function createMap(
     props: __esri.MapProperties
 ): Promise<__esri.Map> {
+    await castLayers(props);
     const [Map] = await loadModules([
         'esri/Map'
     ]);
@@ -521,29 +522,39 @@ export async function createTileLayer(
 }
 /**
  * create a webscene instance by json;
- * @param websceneProps webscene json properties
+ * @param props webscene json properties
  */
-export async function createWebSceneFromConfig(
-    websceneProps: __esri.WebSceneProperties
+export async function createWebScene(
+    props: __esri.WebSceneProperties
 ): Promise<__esri.WebScene> {
-    // parse layers;
-    let layersProps = websceneProps.layers as any[];
-    let layers = await createLayers(layersProps);
-    websceneProps.layers = layers;
-    // parse basemap layers;
-    const basemapProps = websceneProps.basemap as __esri.BasemapProperties;
-    layersProps = basemapProps.baseLayers as any[];
-    layers = await createLayers(layersProps);
-    basemapProps.baseLayers = layers;
-    // ground layers;
-    const groundProps = websceneProps.ground as __esri.GroundProperties;
-    layersProps = groundProps.layers as any[];
-    layers = await createLayers(layersProps);
-    groundProps.layers = layers;
+    await castLayers(props);
     let webscene: __esri.WebScene;
     const [WebScene] = await loadModules(['esri/WebScene']);
-    webscene = new WebScene(websceneProps);
+    webscene = new WebScene(props);
     return webscene;
+}
+
+async function castLayers(props: __esri.MapProperties) {
+    // layers
+    if (!!props.layers) {
+        const layersProps = props.layers as any[];
+        const layers = await createLayers(layersProps);
+        props.layers = layers;
+    }
+    // basemap
+    if (typeof props.basemap !== 'string') {
+        const basemapProps = props.basemap as __esri.BasemapProperties;
+        const layersProps = basemapProps.baseLayers as any[];
+        const layers = await createLayers(layersProps);
+        basemapProps.baseLayers = layers;
+    }
+    // ground;
+    if (typeof props.ground !== 'string') {
+        const groundProps = props.ground as __esri.GroundProperties;
+        const layersProps = groundProps.layers as any[];
+        const layers = await createLayers(layersProps);
+        groundProps.layers = layers;
+    }
 }
 
 /**

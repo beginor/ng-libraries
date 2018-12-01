@@ -1,6 +1,6 @@
 {
   "name": "esri-service",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "peerDependencies": {
     "tslib": "^1.9.0",
     "esri-loader": "^2.5.0",
