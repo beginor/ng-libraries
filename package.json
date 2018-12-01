@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/beginor/ng-seed#readme",
   "dependencies": {
-        "@angular/animations": "~7.1.0",
+    "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
     "@angular/compiler": "~7.1.0",
     "@angular/core": "~7.1.0",
@@ -68,9 +68,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6",
-    "@angular-devkit/build-ng-packagr": "~0.10.0",
-    "ng-packagr": "^4.2.0",
-    "tsickle": ">=0.29.0",
+    "@angular-devkit/build-ng-packagr": "~0.11.0",
+    "ng-packagr": "^4.4.0",
+    "tsickle": ">=0.34.0",
     "@types/arcgis-js-api": "^4.9.0"
   }
 }
