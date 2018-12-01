@@ -6,7 +6,7 @@ import {
     Component, ElementRef, OnDestroy, OnInit, ViewChild
 } from '@angular/core';
 
-import { loadScript } from 'esri-loader';
+import { loadScript, isLoaded } from 'esri-loader';
 import * as esri from 'esri-service';
 
 import { fadeIn } from 'ng-animations';
@@ -40,10 +40,12 @@ export class SceneComponent implements OnInit, OnDestroy {
 
     public async ngOnInit(): Promise<void> {
         try {
-            await loadScript({
-                url: 'https://js.arcgis.com/4.9/init.js',
-                css: 'https://js.arcgis.com/4.9/esri/css/main.css'
-            });
+            if (!isLoaded()) {
+                await loadScript({
+                    url: 'https://js.arcgis.com/4.9/init.js',
+                    css: 'https://js.arcgis.com/4.9/esri/css/main.css'
+                });
+            }
             const map = await esri.createMap({
                 basemap: 'satellite',
                 ground: 'world-elevation'
