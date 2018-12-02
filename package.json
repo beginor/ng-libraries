@@ -1,12 +1,12 @@
 {
-  "name": "ng-seed",
+  "name": "ng-libraries",
   "version": "1.0.0",
   "description": "angular seed app",
   "main": "src/index.html",
   "scripts": {
     "clean": "rm -rf dist coverage",
     "ng": "ng",
-    "build": "ng build ng-animations --prod && ng build esri-service --prod && ng build --prod --base-href=/ng-seed/ --deploy-url=/ng-seed/",
+    "build": "ng build ng-animations --prod && ng build esri-service --prod && ng build --prod --base-href=/ng-libraries/ --deploy-url=/ng-libraries/",
     "lint": "ng lint",
     "start": "ng serve --host 0.0.0.0",
     "test": "ng test --watch",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beginor/ng-seed.git"
+    "url": "git+https://github.com/beginor/ng-libraries.git"
   },
   "keywords": [
     "angular",
@@ -26,9 +26,9 @@
   "author": "beginor",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/beginor/ng-seed/issues"
+    "url": "https://github.com/beginor/ng-libraries/issues"
   },
-  "homepage": "https://github.com/beginor/ng-seed#readme",
+  "homepage": "https://github.com/beginor/ng-libraries#readme",
   "dependencies": {
     "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
