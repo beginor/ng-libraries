@@ -7,22 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppCommonModule } from './common/app-common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import {
-    AnimationsComponent
-} from './components/animations/animations.component';
-import { SceneComponent } from './components/scene/scene.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        HomeComponent,
-        AboutComponent,
-        AnimationsComponent,
-        SceneComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
@@ -33,6 +24,7 @@ import { SceneComponent } from './components/scene/scene.component';
         HttpClientModule,
         HttpClientJsonpModule,
         NgbModule,
+        AppCommonModule,
         AppRoutingModule
     ],
     bootstrap: [AppComponent]

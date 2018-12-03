@@ -2,19 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { environment } from '../environments/environment';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import {
-    AnimationsComponent
-} from './components/animations/animations.component';
-import { SceneComponent } from './components/scene/scene.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'animations', component: AnimationsComponent },
-    { path: 'scene', component: SceneComponent }
+    { path: 'home', loadChildren: './home/home.module#HomeModule' },
+    { path: 'about', loadChildren: './about/about.module#AboutModule' },
+    {
+        path: 'animations',
+        loadChildren: './animations/animations.module#AnimationsModule'
+    },
+    { path: 'scene', loadChildren: './scene/scene.module#SceneModule' }
 ];
 
 @NgModule({
