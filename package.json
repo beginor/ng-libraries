@@ -45,7 +45,7 @@
     "bootstrap": "^4.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.5.0",
-    "esri-loader": "^2.5.0"
+    "esri-loader": "^2.6.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",
@@ -71,6 +71,6 @@
     "@angular-devkit/build-ng-packagr": "~0.11.0",
     "ng-packagr": "^4.4.0",
     "tsickle": ">=0.34.0",
-    "@types/arcgis-js-api": "^4.9.0"
+    "@types/arcgis-js-api": "^4.10.0"
   }
 }
